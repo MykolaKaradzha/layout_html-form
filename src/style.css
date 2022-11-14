@@ -1,1 +1,54 @@
 /* styles go here */
+body {
+  box-sizing: border-box;
+  --selector-border-radius: 5px;
+}
+
+fieldset:nth-child(n+2) {
+  margin-top: 20px;
+}
+
+.form-label {
+  margin-top: 10px;
+  display: block;
+}
+
+.time-input::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+.cars-selector {
+  overflow-y: auto;
+}
+
+.selector-span {
+  position: relative;
+}
+
+.selector-span::after {
+  position: absolute;
+  content: "<>";
+  font: 12.5px "Consolas", monospace;
+  padding: 2.5px;
+  color: white;
+  background: linear-gradient(to right, #609dec, #2849b4);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 0;
+  border-top-right-radius: var(--selector-border-radius);
+  border-top-left-radius: var(--selector-border-radius);
+  pointer-events: none;
+}
+
+.selector-span:hover::after {
+  color: #91bcff;
+}
+
+.selector {
+  border-radius: var(--selector-border-radius);
+  width: auto;
+}
